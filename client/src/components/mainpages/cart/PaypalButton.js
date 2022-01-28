@@ -29,7 +29,7 @@ export default class PaypalButton extends React.Component {
         // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
  
         const client = {
-            sandbox:    'YOUR-sandbox-APP-ID',
+            sandbox:    'AdwRjRFQAOXAmpfqbhYa9_uEq1paFGbBiX8LuxVEHIxYheOUitQas_KDeAhfMmr29EAeP4U7RcC7k3EL',
             production: 'YOUR-PRODUCTION-APP-ID',
         }
         // In order to get production's app-ID, you will have to send your app to Paypal for approval first
@@ -48,12 +48,14 @@ export default class PaypalButton extends React.Component {
         }
 
         return (
+            <>
+            {/* <button style={{borderRadius:'25%',margin:"2px",padding:"10px",color:"blue",backgroundColor:"cyan",}}>CheckOut</button></> */}
             <PaypalExpressBtn 
             env={env} client={client} 
             currency={currency} 
             total={total} onError={onError} 
             onSuccess={onSuccess} onCancel={onCancel}
-            style={style} />
+            style={style} /></>
         );
     }
 }

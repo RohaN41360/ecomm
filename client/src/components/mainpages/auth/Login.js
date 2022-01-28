@@ -26,7 +26,7 @@ function Login() {
     }
 
     return (
-        <div className="login-page">
+        <div className="login-page" style={{boxShadow:"0 10px 10px  grey"}}>
             <form onSubmit={loginSubmit}>
                 <h2>Login</h2>
                 <input type="email" name="email" required
@@ -36,8 +36,8 @@ function Login() {
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
 
                 <div className="row">
-                    <button type="submit">Login</button>
-                    <Link to="/register">Register</Link>
+                    <button type="submit" style={{boxShadow:"0 10px 10px grey"}}>Login</button>
+                    <Link to="/register" >Register</Link>
                 </div>
             </form>
         </div>

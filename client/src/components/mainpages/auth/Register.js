@@ -27,7 +27,7 @@ function Register() {
     }
 
     return (
-        <div className="login-page">
+        <div className="login-page" style={{boxShadow:"0 10px 10px grey"}}>
             <form onSubmit={registerSubmit}>
                 <h2>Register</h2>
                 <input type="text" name="name" required
@@ -50,7 +50,7 @@ function Register() {
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
 
                 <div className="row">
-                    <button type="submit">Register</button>
+                    <button type="submit" style={{boxShadow:"0 10px 10px grey"}}>Register</button>
                     <Link to="/login">Login</Link>
                 </div>
             </form>
