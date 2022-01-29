@@ -25,7 +25,7 @@ function BtnRender({product, deleteProduct}) {
                     <Link id="btn_buy" to="#!" onClick={() => addCart(product)}>
                         Buy
                     </Link>
-                    <Link id="btn_view" to={`/detail/${product._id}`} style={{backgroundColor:"#6600cc"}}>
+                    <Link id="btn_view" to={`/detail/${product._id}`} style={{backgroundColor:"rgb(255,225,65)"}}>
                         View
                     </Link>
                 </>

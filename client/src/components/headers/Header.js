@@ -38,6 +38,19 @@ function Header() {
             </>
         )
     }
+    // const state = useContext(GlobalState)
+    // const [categories] = state.categoriesAPI.categories
+
+    // const [category, setCategory] = state.productsAPI.category
+    // const [sort, setSort] = state.productsAPI.sort
+    
+    const [search, setSearch] = state.productsAPI.search
+
+
+    // const handleCategory = e => {
+    //     setCategory(e.target.value)
+    //     setSearch('')
+    // }
 
 
     const styleMenu = {
@@ -45,24 +58,30 @@ function Header() {
     }
 
     return (
-        <header>
+        <header style={{backgroundColor:"rgb(255,225,65)",display:"flex",justifyContent:"space-around"}}>
+            
             <div className="menu" onClick={() => setMenu(!menu)}>
                 <img src={Menu} alt="" width="30" />
             </div>
 
-            <div className="logo">
+            <div className="logo" >
                 <h1>
-                    <Link to="/" style={{color:"teal"}}>{isAdmin ? 'Admin' : 'ScaleBasket'}</Link>
+                    <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? 'Admin' : 'ScaleBasket'}</Link>
                 </h1>
             </div>
 
+            <div>
+            <input type="text" value={search} style={{textAlign:"center",width:"90vh",resize: 'vertical'}} placeholder="Search your Favourite products here!"
+            onChange={e => setSearch(e.target.value.toLowerCase())} />
+            </div>
+
             <ul style={styleMenu}>
-                <li><Link to="/">{isAdmin ? 'Products' : 'Shop'}</Link></li>
+                <li><Link to="/" style={{color:"black", display: 'inline-block'}}>{isAdmin ? 'Products' : 'Shop'}</Link></li>
 
                 {isAdmin && adminRouter()}
 
                 {
-                    isLogged ? loggedRouter() : <li><Link to="/login">Login ✥ Register</Link></li>
+                    isLogged ? loggedRouter() : <li><Link style={{color:"black", display: 'inline-block'}} to="/login">Login ✥ Register</Link></li>
                 }
 
                 <li onClick={() => setMenu(!menu)}>

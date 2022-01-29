@@ -14,6 +14,7 @@ function Register() {
 
     const registerSubmit = async e =>{
         e.preventDefault()
+        
         try {
             await axios.post('/user/register', {...user})
 
@@ -28,6 +29,7 @@ function Register() {
 
     return (
         <div className="login-page" style={{boxShadow:"0 10px 10px grey"}}>
+        
             <form onSubmit={registerSubmit}>
                 <h2>Register</h2>
                 <input type="text" name="name" required
