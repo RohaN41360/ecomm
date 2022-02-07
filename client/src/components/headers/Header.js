@@ -66,7 +66,7 @@ function Header() {
 
             <div className="logo" >
                 <h1>
-                    <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? 'Admin' : 'ScaleBasket'}</Link>
+                    <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? 'Admin' : '❅⋆⋆ScaleBasket⋆⋆❅'}</Link>
                 </h1>
             </div>
 

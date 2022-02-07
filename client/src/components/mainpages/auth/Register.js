@@ -35,18 +35,21 @@ function Register() {
                 <input type="text" name="name" required
                 placeholder="Name" value={user.name} onChange={onChangeInput} />
 
-                <input type="email" name="email" required
+                <input type="email" name="email" required autoComplete='off'
                 placeholder="Email" value={user.email} onChange={onChangeInput} />
 
-                <input type="number" name="role" required
-                placeholder="Enter 1 for Owner Or 0 for Customer" value={user.role} onChange={onChangeInput} />
+                {/* <input type="number" name="role" required
+                placeholder="Enter 1 for Owner Or 0 for Customer" value={user.role} onChange={onChangeInput} /> */}
 
-                {/* <select  style={{width:"100%",height:"40px"}} value={user.role} onChange={onChangeInput}>
-                    
-                    <option value="1">Owner</option>
-                    <option value="0">Customer</option>
-                </select> */}
+                <label htmlFor="owner">Owner:</label>
+                <input type="radio" style={{width:'30px'}} id='owner' name='role' value={user.role} value='1' onChange={onChangeInput} />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label htmlFor="customer">Customer:</label>
+                <input type="radio" style={{width:'30px'}} id='customer' name='role'value={user.role} value='0' onChange={onChangeInput} />
 
+                
+                <input type="text" name="shopname"  autoComplete='off'
+                placeholder="shopname" value={user.shopname} onChange={onChangeInput} />       
                 
                 <input type="password" name="password" required autoComplete="on"
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
