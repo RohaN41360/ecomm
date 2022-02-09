@@ -13,8 +13,8 @@ const userSchema = new mongoose.Schema({
     },
     shopname:{
         type: String,
-        required: true,
-        unique: true
+        required: false,
+        trim: true
    },
    
     password: {

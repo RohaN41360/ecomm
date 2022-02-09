@@ -59,6 +59,7 @@ function Products() {
     if(loading) return <div><Loading /></div>
     return (
         <>
+        <h1 style={{textAlign:'center'}}><span style={{color:'orange'}}>Our </span>Products</h1>
         <Filters />
         
         {

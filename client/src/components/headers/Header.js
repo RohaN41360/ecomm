@@ -60,22 +60,22 @@ function Header() {
     return (
         <header style={{backgroundColor:"rgb(255,225,65)",display:"flex",justifyContent:"space-around"}}>
             
-            <div className="menu" onClick={() => setMenu(!menu)}>
+            <div className="menu"  onClick={() => setMenu(!menu)}>
                 <img src={Menu} alt="" width="30" />
             </div>
 
-            <div className="logo" >
+            <div className="logo" style={{display:'flex'}}>
                 <h1>
                     <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? 'Admin' : '❅⋆⋆ScaleBasket⋆⋆❅'}</Link>
                 </h1>
             </div>
 
-            <div>
+            <div style={{display:'flex'}}>
             <input type="text" value={search} style={{textAlign:"center",width:"90vh",resize: 'vertical'}} placeholder="Search your Favourite products here!"
             onChange={e => setSearch(e.target.value.toLowerCase())} />
             </div>
 
-            <ul style={styleMenu}>
+            <ul style={styleMenu} style={{display:'flex'}}>
                 <li><Link to="/" style={{color:"black", display: 'inline-block'}}>{isAdmin ? 'Products' : 'Shop'}</Link></li>
 
                 {isAdmin && adminRouter()}
@@ -84,7 +84,7 @@ function Header() {
                     isLogged ? loggedRouter() : <li><Link style={{color:"black", display: 'inline-block'}} to="/login">Login ✥ Register</Link></li>
                 }
 
-                <li onClick={() => setMenu(!menu)}>
+                <li onClick={() => setMenu(!menu)} style={{display:'flex'}}> 
                     <img src={Close} alt="" width="30" className="menu" />
                 </li>
 

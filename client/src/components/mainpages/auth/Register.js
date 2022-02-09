@@ -27,6 +27,8 @@ function Register() {
         }
     }
 
+    const [isclicked,setclick] = useState(false)
+
     return (
         <div className="login-page" style={{boxShadow:"0 10px 10px grey"}}>
         
@@ -41,15 +43,25 @@ function Register() {
                 {/* <input type="number" name="role" required
                 placeholder="Enter 1 for Owner Or 0 for Customer" value={user.role} onChange={onChangeInput} /> */}
 
-                <label htmlFor="owner">Owner:</label>
-                <input type="radio" style={{width:'30px'}} id='owner' name='role' value={user.role} value='1' onChange={onChangeInput} />
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <label htmlFor="customer">Customer:</label>
-                <input type="radio" style={{width:'30px'}} id='customer' name='role'value={user.role} value='0' onChange={onChangeInput} />
 
-                
-                <input type="text" name="shopname"  autoComplete='off'
-                placeholder="shopname" value={user.shopname} onChange={onChangeInput} />       
+                <div style={{display:'flex',justifyContent:'space-around'}}>
+                <div>
+                <input type="radio" style={{width:'50px'}}  id='owner' onClick={()=>setclick(!isclicked)} name='role' value={user.role} value='1' onChange={onChangeInput} />
+                <label htmlFor="owner" style={{display:"flex",justifyItems:'center',justifyContent:'center'}}>Owner:</label>
+                </div>
+                <div>
+                <input type="radio" style={{width:'50px'}}  id='customer' onClick={()=>setclick(!isclicked)} name='role'value={user.role} value='0' onChange={onChangeInput} />
+                <label htmlFor="customer" style={{display:"flex",justifyItems:'center',justifyContent:'center'}}>Customer:</label>
+                </div>
+
+                </div>
+
+
+                {isclicked && <input type="text" name="shopname" 
+                placeholder="shopname" value={user.shopname} onChange={onChangeInput} /> }
+
+                {/* <input type="text" name="shopname"  autoComplete='off'
+                placeholder="shopname" value={user.shopname} onChange={onChangeInput} />        */}
                 
                 <input type="password" name="password" required autoComplete="on"
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
