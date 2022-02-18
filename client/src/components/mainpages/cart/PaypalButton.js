@@ -49,13 +49,13 @@ export default class PaypalButton extends React.Component {
 
         return (
             <>
-            {/* <button style={{borderRadius:'25%',margin:"2px",padding:"10px",color:"blue",backgroundColor:"cyan",}}>CheckOut</button></> */}
-            <PaypalExpressBtn 
-            env={env} client={client} 
-            currency={currency} 
-            total={total} onError={onError} 
-            onSuccess={onSuccess} onCancel={onCancel}
-            style={style} /></>
+            <button style={{borderRadius:'25%',margin:"2px",padding:"10px",color:"blue",backgroundColor:"cyan",}}>CheckOut</button></>
+            // <PaypalExpressBtn 
+            // env={env} client={client} 
+            // currency={currency} 
+            // total={total} onError={onError} 
+            // onSuccess={onSuccess} onCancel={onCancel}
+            // style={style} /></>
         );
     }
 }

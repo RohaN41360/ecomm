@@ -115,6 +115,12 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    result:async(req,res)=>{
+        const result = await Users.find({
+            role:1
+        },{"shopname":1})
+        res.send(result)
+    },
     history: async(req, res) =>{
         try {
             const history = await Payments.find({user_id: req.user.id})

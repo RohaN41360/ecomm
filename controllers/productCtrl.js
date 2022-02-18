@@ -1,4 +1,5 @@
 const Products = require('../models/productModel')
+const User = require('../models/userModel')
 
 // Filter, sorting and paginating
 
@@ -48,7 +49,7 @@ class APIfeatures {
 const productCtrl = {
     getProducts: async(req, res) =>{
         try {
-            const features = new APIfeatures(Products.find(), req.query)
+            const features = new APIfeatures(Products.find(User._id), req.query)
             .filtering().sorting().paginating()
 
             const products = await features.query

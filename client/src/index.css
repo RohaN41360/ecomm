@@ -59,8 +59,11 @@ button{
 /* ------------------- Create Product -------------- */
 @import url("./components/mainpages/createProduct/createProduct.css");
 
-
+/* ------------------- Footer -------------- */
 @import url("./components/footer/foot.css");
+
+/* ------------------- setOwner-------------- */
+@import url("./components/mainpages/cart/setowner.css");
 
 /* ----------------- Responsive ------------------ */
 @media (max-width: 820px){

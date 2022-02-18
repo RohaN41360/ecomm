@@ -2,6 +2,7 @@ import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
 import PaypalButton from './PaypalButton'
+import Setowner from './Setowner'
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -108,6 +109,11 @@ function Cart() {
                     </div>
                 ))
             }
+
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <Setowner />
+            </div>
+            
 
             <div className="total">
                 <h3>Total: ₹ {total}</h3>
