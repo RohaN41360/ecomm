@@ -11,6 +11,7 @@ function Header() {
     const [isLogged] = state.userAPI.isLogged
     const [isAdmin] = state.userAPI.isAdmin
     const [cart] = state.userAPI.cart
+    const [shop] = state.userAPI.shop
     const [menu, setMenu] = useState(false)
      
     const logoutUser = async () =>{
@@ -66,12 +67,12 @@ function Header() {
 
             <div className="logo" >
                 <h1>
-                    <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? 'Admin' : '❅⋆⋆ScaleBasket⋆⋆❅'}</Link>
+                    <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? shop : '❅⋆⋆ScaleBasket⋆⋆❅'}</Link>
                 </h1>
             </div>
 
             <div>
-            <input type="text" value={search} style={{textAlign:"center",width:"90vh",resize: 'vertical'}} placeholder="Search your Favourite products here!"
+            <input type="text" value={search} style={{textAlign:"center",width:"35vw",resize: 'vertical'}} placeholder="Search your Favourite products here!"
             onChange={e => setSearch(e.target.value.toLowerCase())} />
             </div>
 

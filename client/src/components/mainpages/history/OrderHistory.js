@@ -30,10 +30,10 @@ function OrderHistory() {
     },[token, isAdmin, setHistory])
 
     return (
-        <div className="history-page">
+        <div className="history-page" style={{marginBottom:"300px"}}>
             <h2>History</h2>
 
-            <h4>You have {history.length} ordered</h4>
+            <h4>You have <span style={{color:"red"}}>{history.length}</span> ordered</h4>
 
             <table>
                 <thead>
