@@ -40,3 +40,26 @@ header ul li:hover{
     padding: 5px 7px;
     font-size: 10px;
 }
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn {
+    cursor: pointer;
+    color: gray;
+    background-color: white;
+    padding: 4px 10px;
+    
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
