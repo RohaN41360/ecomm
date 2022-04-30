@@ -31,32 +31,41 @@ const Footer = () => {
     const loggedRouter = () =>{
       return(
           <>
-              <li><Link to="/history">History</Link></li>
-              <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+              <div>
+                  <li><Link style={{color:"#c74f78",fontSize:"25px" ,margin:'10px'}}  to="/history">History</Link></li>
+              </div>
+              <div>
+                  <li><Link style={{color:"#c74f78",fontSize:"25px" ,margin:'10px'}} to="/" onClick={logoutUser}>Logout</Link></li>
+              </div>
+          </div>
           </>
       )
   }
   return <div>
-      <footer style={{height:"40vh"}}>
+      <footer style={{height:"50vh"}}>
     <div class="wrapper">
       <small>&copy;2022 <strong>ScaleBasket</strong>, All Rights Reserved</small>
-      <nav class="footer-nav">
+      {/* <nav class="footer-nav"> */}
                 <h1>
                     <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? 'Admin' : '❅⋆⋆ScaleBasket⋆⋆❅'}</Link>
                 </h1>
-
-        <Link to="/" style={{color:"#c74f78", display: 'inline-block'}}>{isAdmin ? 'Products' : 'Shop'}</Link>
-        
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center',padding:"25px"}}>            
+     <div style={{margin:"20px"}}> 
+        <Link to="/" style={{color:"#c74f78", display: 'inline-block',fontSize:"25px"}}>{isAdmin ? 'Products' : 'Shop'}</Link>
+    </div>    
+     <div style={{margin:"20px"}}> 
         {isAdmin && adminRouter()}
 
                 {
-                    isLogged ? loggedRouter() : <Link style={{color:"#c74f78", display: 'inline-block'}} to="/login">Login ✥ Register</Link>
+                    isLogged ? loggedRouter() : <Link style={{color:"#c74f78", display: 'inline-block',fontSize:"25px"}} to="/login">Login ✥ Register</Link>
                 }
-        
-        
-        <a href="#">Back to Top</a>
-        
-      </nav>
+    </div>    
+     <div style={{margin:"20px"}}>     
+        <a href="#" style={{color:"#c74f78",fontSize:"25px"}}>Back to Top</a>
+    </div> 
+    </div>   
+      {/* </nav> */}
     </div>
   </footer>
   </div>;

@@ -66,6 +66,7 @@ function Header() {
   });
 
   setInterval(function () {console.clear()}, 50000);
+  
   const convertImageToText = async () => {
     if (!imageData) return;
     await worker.load();

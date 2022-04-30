@@ -13,7 +13,7 @@ const Setowner = () => {
             headers: {Authorization: token}
         }).then(oner=>oner.json())
         .then(result=>{
-            console.log(result[0].shopname)
+            // console.log(result[0].shopname)
             setowner(result)
         })
     },[])

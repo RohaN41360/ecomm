@@ -9,6 +9,7 @@ function Cart() {
     const [cart, setCart] = state.userAPI.cart
     const [token] = state.token
     const [total, setTotal] = useState(0)
+    const [totalpay, setTotalpay] = useState(0)
 
     useEffect(() =>{
         const getTotal = () =>{
@@ -17,6 +18,7 @@ function Cart() {
             },0)
 
             setTotal(total)
+            setTotalpay(Math.round(total/75))
         }
 
         getTotal()
@@ -118,7 +120,7 @@ function Cart() {
             <div className="total">
                 <h3>Total: ₹ {total}</h3>
                 <PaypalButton
-                total={total}
+                total={totalpay}
                 tranSuccess={tranSuccess} />
             </div>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 import './not_found.css'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+    // BrowserRouter as Router,
+    // Switch,
+    // Route,
     Link,
     useHistory
   } from "react-router-dom";
