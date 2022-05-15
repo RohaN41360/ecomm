@@ -15,9 +15,10 @@ function Header() {
     const [isAdmin] = state.userAPI.isAdmin
     const [cart] = state.userAPI.cart
     const [shop] = state.userAPI.shop
+    const [username] = state.userAPI.username
     const [menu, setMenu] = useState(false)
      
-    const logoutUser = async () =>{
+    const logoutUser = async () =>{ 
         await axios.get('/user/logout')
         
         localStorage.removeItem('firstLogin')
@@ -101,15 +102,16 @@ function Header() {
 
     return (
         <header style={{backgroundColor:"rgb(255,225,65)",display:"flex",justifyContent:"space-around"}}>
-            
+           
             <div className="menu" onClick={() => setMenu(!menu)}>
                 <img src={Menu} alt="" width="30" />
             </div>
 
             <div className="logo" >
-                <h1>
+                <h2>
                     <Link to="/" style={{color:"teal",paddingLeft:"20px"}}>{isAdmin ? shop : '❅⋆⋆ScaleBasket⋆⋆❅'}</Link>
-                </h1>
+               <br />    {username}</h2><br />
+                
             </div>
 
             <div style={{display:'flex',alignContent:'center',alignItems:'center' }}>
@@ -132,7 +134,7 @@ function Header() {
                 {isAdmin && adminRouter()}
 
                 {
-                    isLogged ? loggedRouter() : <li><Link style={{color:"black", display: 'inline-block'}} to="/login">Login ✥ Register</Link></li>
+                    isLogged ? loggedRouter() : <li><Link style={{color:"#000000", display: 'inline-block'}} to="/login">Login ✥ Register</Link></li>
                 }
 
                 <li onClick={() => setMenu(!menu)}>

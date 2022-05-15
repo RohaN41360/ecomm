@@ -7,6 +7,7 @@ function UserAPI(token) {
     const [cart, setCart] = useState([])
     const [history, setHistory] = useState([])
     const [shop,setshop] = useState("")
+    const [username,setusername] = useState("")
 
     useEffect(() =>{
         if(token){
@@ -19,6 +20,8 @@ function UserAPI(token) {
                     setIsLogged(true)
                     res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
                     res.data.role === 1 ? setshop(res.data.shopname) : setshop("")
+                    res.data.role === 0 ? setusername(res.data.name) : setusername("")
+
 
                     setCart(res.data.cart)
 
@@ -59,7 +62,8 @@ function UserAPI(token) {
         cart: [cart, setCart],
         addCart: addCart,
         history: [history, setHistory],
-        shop:[shop,setshop]
+        shop:[shop,setshop],
+        username:[username,setusername]
     }
 }
 
