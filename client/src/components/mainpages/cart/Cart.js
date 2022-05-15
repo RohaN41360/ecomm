@@ -67,10 +67,27 @@ function Cart() {
         }
     }
 
+    const [owner,setowner] = useState([])
+    const [shopname,setshopname] = useState("")
+   
+    
+    console.log(shopname)
+    useEffect(()=>{
+        fetch("user/res",{
+            headers: {Authorization: token}
+        }).then(oner=>oner.json())
+        .then(result=>{
+            // console.log(result[0].shopname)
+            setowner(result)
+        })
+    },[])
+
+
+
     const tranSuccess = async(payment) => {
         const {paymentID, address} = payment;
 
-        await axios.post('/api/payment', {cart, paymentID, address}, {
+        await axios.post('/api/payment', {cart, paymentID,shopname, address}, {
             headers: {Authorization: token}
         })
 
@@ -113,7 +130,23 @@ function Cart() {
             }
 
             <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                <Setowner />
+                {/* <Setowner /> */}
+                <div className='body'>
+    <div className='select' style={{width:'200px'}}>
+        {/* <label htmlFor="">Select A Store:</label> */}
+        <select name='format' id='format' onChange={(e)=>{setshopname(e.target.value)}} >
+        <option selected disabled>Select  Store</option>
+            {
+                 owner.map(item=>{
+                     return(
+                            <option value={item.shopname}>{item.shopname}</option>
+                     )
+                 })
+            }
+        </select>
+    </div>
+    </div>
+
             </div>
             
 

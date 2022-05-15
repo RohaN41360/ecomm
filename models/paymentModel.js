@@ -18,6 +18,10 @@ const paymentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    shopname:{
+        type: String,
+        required: false
+    },
     address:{
         type: Object,
         required: true

@@ -50,7 +50,7 @@ function Register() {
                 <label htmlFor="owner" style={{display:"flex",justifyItems:'center',justifyContent:'center'}}>Owner:</label>
                 </div>
                 <div>
-                <input type="radio" style={{width:'50px'}}  id='customer' onClick={()=>setclick(!isclicked)} name='role'value={user.role} value='0' onChange={onChangeInput} />
+                <input type="radio" style={{width:'50px'}}  id='customer' onClick={()=>setclick(!isclicked)} name='role' value={user.role} value='0' onChange={onChangeInput} />
                 <label htmlFor="customer" style={{display:"flex",justifyItems:'center',justifyContent:'center'}}>Customer:</label>
                 </div>
 

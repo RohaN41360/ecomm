@@ -65,7 +65,7 @@ function Header() {
     },
   });
 
-  setInterval(function () {console.clear()}, 50000);
+//   setInterval(function () {console.clear()}, 50000);
   
   const convertImageToText = async () => {
     if (!imageData) return;
